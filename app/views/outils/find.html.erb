@@ -1,8 +1,27 @@
-<div class='container'>
-  <h2> Résultats de la recherche</h2>
-     introduire un pdf avec comme donnee -> graphe + % gain + % perte + gain + perte <br>
-    <br>
-    <a href="#" target='_blank' style='color: blue; text-decoration:underline'>Imprimer</a><br>
+<script src="https://code.highcharts.com/highcharts.js"></script>
+<script src="https://code.highcharts.com/modules/exporting.js"></script>
+
+<div class='container' style='font-family:expletus_sansregular;'>
+  <h2 style='font-family:expletus_sansmedium; margin-bottom: 25px;'> Résultats de la recherche</h2>
+  <div class='row'>
+    <div class='col-lg-6 center-block'>
+      <img src='<%= image_path('find1.png') %>' alt="Smiley face"  style='width:100%'>
+      <div style='margin-top:25px; margin-bottom:25px;text-align:center '> <a href= '#' target='_blank' style=' text-decoration:underline'> Explorer la donnée</a></div>
+
+    </div>
+    <div class='col-lg-6'>
+      <img src='<%= image_path('find2.png') %>' alt="Smiley face" style='width:100%'>
+      <div style='margin-top:15px;margin-bottom:25px;text-align:center '> <a href= '#' target='_blank' style=' text-decoration:underline'> Explorer la donnée</a></div>
+    </div>
+  </div>
+  <div class='row'>
+    <div class='col-lg-3'></div>
+    <div class='col-lg-6' style='margin-top: 15px;'>
+      <img src='<%= image_path('find3.png') %>' alt="Smiley face"  style='width:100%'>
+      <div style='margin-top:15px; margin-bottom:25px;text-align:center '> <a href= '#' target='_blank' style=' text-decoration:underline'> Explorer la donnée</a></div>
+    </div>
+  </div>
+    <a href="#" target='_blank' style='color: blue; text-decoration:underline'>Imprimer le rapport</a><br>
     <a href="#" target='_blank' style='color: blue; text-decoration:underline'>Enregistrer dans 'mes recherches'</a><br>
-    <a href="#" target='_blank' style='color: blue; text-decoration:underline'>Fichier pdf : titre de du dossier</a>
+    <a href= '<%= image_path('Ferrari.pdf') %>' target='_blank' style='color: blue; text-decoration:underline'> Décisions associées</a>
 </div>
