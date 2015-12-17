@@ -1,108 +1,65 @@
+<script>
+$(document).ready(function(){
+    $(".litige").hide();
+    $(".pro").hide();
+    $(".prudhomme").click(function(){
+        $(".litige").show();
+    });
+    $(".checkpro").click(function(){
+        $(".pro").show();
+    });
+});
+</script>
+
+
 <div class='container'  style='font-family:expletus_sansmedium;'>
   <h1 class='title-filter'>Filtres de recherche</h1>
-  <div class='row center-block f1'>
-    <div class='col-lg-3'></div>
-    <div class='col-lg-6 '>
-      <h3>Lieux</h3>
-        <label class="checkbox-inline"><input type="checkbox" value="">Paris</label>
-        <label class="checkbox-inline"><input type="checkbox" value="">Nanterre</label>
-        <label class="checkbox-inline"><input type="checkbox" value="">Versaille</label>
-    </div>
-  </div>
 
   <div class='row center-block f1'>
     <div class='col-lg-3'></div>
     <div class='col-lg-6 '>
-      <h3>Type de procès</h3>
-        <label class="checkbox-inline"><input type="checkbox" value="">Civil</label>
-        <label class="checkbox-inline"><input type="checkbox" value="">Pénal</label>
-    </div>
-  </div>
-
-  <div class='row center-block f1'>
-    <div class='col-lg-3'></div>
-    <div class='col-lg-6'>
-      <h3>Type de tribunal</h3>
-      <div class="form-group">
-        <select class="form-control" id="sel1">
-          <option>Commerce</option>
-          <option>Prud'homme</option>
-          <option>Instance</option>
-          <option>Grande Instance</option>
-        </select>
+      <h3>Contentieux</h3>
+        <label class="checkbox-inline checkpro"><input type="checkbox" value="">Professionnel</label>
+        <label class="checkbox-inline"><input type="checkbox" value="">Privé</label>
+      <div class='row center-block f1 pro'>
+        <label class="checkbox-inline ici"><input type="checkbox" value="">Salarier</label>
+        <label class="checkbox-inline"><input type="checkbox" value="">Indépendant</label>
+        <label class="checkbox-inline"><input type="checkbox" value="">Employeur</label>
       </div>
-      <h4> Chiffre d'affaires (euros) </h4>
-          <select class="form-control" id="sel1">
-            <option> 0 - 100 000</option>
-            <option> 100 000 - 1 000 000</option>
-            <option> 1 000 000 - 5 000 000</option>
-            <option> + 5 000 000</option>
-          </select>
     </div>
   </div>
 
   <div class='row center-block f1'>
     <div class='col-lg-3'></div>
     <div class='col-lg-6'>
-      <h3>Période</h3>
-      <div class='col-lg-3'>
-        <div class="form-group">
-          <select class="form-control" id="sel1">
-            <option>Janvier</option>
-            <option>Février</option>
-            <option>Mars</option>
-            <option>Mai</option>
-            <option>Juin</option>
-            <option>Juillet</option>
-            <option>Août</option>
-            <option>Septembre</option>
-            <option>Octobre</option>
-            <option>Novembre</option>
-            <option>Décembre</option>
-          </select>
-        </div>
-        </div>
-        <div class='col-lg-3'>
-          <select class="form-control" id="sel1">
-            <option>1995</option>
-            <option>2000</option>
-            <option>2010</option>
-            <option>2011</option>
-            <option>2012</option>
-            <option>2013</option>
-            <option>2014</option>
-            <option>2015</option>
-          </select>
-        </div>
-        <div class='col-lg-3'>
-          <select class="form-control" id="sel1">
-            <option>Janvier</option>
-            <option>Février</option>
-            <option>Mars</option>
-            <option>Mai</option>
-            <option>Juin</option>
-            <option>Juillet</option>
-            <option>Août</option>
-            <option>Septembre</option>
-            <option>Octobre</option>
-            <option>Novembre</option>
-            <option>Décembre</option>
-          </select>
-        </div>
-        <div class="form-group">
-        <div class='col-lg-3'>
-          <select class="form-control" id="sel1">
-            <option>1995</option>
-            <option>2000</option>
-            <option>2010</option>
-            <option>2011</option>
-            <option>2012</option>
-            <option>2013</option>
-            <option>2014</option>
-            <option>2015</option>
-          </select>
-        </div>
-        </div>
+      <h3>Partie</h3>
+      <div class="form-group">
+         <label class="checkbox-inline"><input type="checkbox" value=""> Entreprise-Entreprise</label>
+         <label class="checkbox-inline"><input type="checkbox" value="">Entreprise-salarier</label>
+         <label class="checkbox-inline prudhomme"><input type="checkbox" value="">Autre</label>
+      </div>
+    </div>
+  </div>
+
+  <div class='row center-block f1 litige'>
+    <div class='col-lg-3'></div>
+    <div class='col-lg-6 '>
+      <h3>Litiges</h3>
+        <label class="checkbox-inline"><input type="checkbox" value="">Salaires impayés</label>
+        <label class="checkbox-inline"><input type="checkbox" value="">Demande d'indemnité</label>
+        <label class="checkbox-inline"><input type="checkbox" value="">Contestation d'une sanction</label>
+        <label class="checkbox-inline"><input type="checkbox" value="">Licenciement abusif</label>
+        <label class="checkbox-inline"><input type="checkbox" value="">Discrimination</label>
+        <label class="checkbox-inline"><input type="checkbox" value="">Autre</label>
+    </div>
+  </div>
+
+  <div class='row center-block f1'>
+    <div class='col-lg-3'></div>
+    <div class='col-lg-6 '>
+      <h3>Je voudrais</h3>
+        <label class="checkbox-inline"><input type="checkbox" value="">Taux de succès</label>
+        <label class="checkbox-inline"><input type="checkbox" value="">Taux d'indémnisation</label>
     </div>
   </div>
 

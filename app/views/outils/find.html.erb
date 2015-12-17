@@ -1,27 +1,102 @@
 <script src="https://code.highcharts.com/highcharts.js"></script>
 <script src="https://code.highcharts.com/modules/exporting.js"></script>
+<script>
+$(function () {
+    $('#cam').highcharts({
+        chart: {
+            type: 'pie',
+            options3d: {
+                enabled: true,
+                alpha: 45,
+                beta: 0
+            }
+        },
+        title: {
+            text: 'Taux de succès'
+        },
+        tooltip: {
+            pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+        },
+        plotOptions: {
+            pie: {
+                allowPointSelect: true,
+                cursor: 'pointer',
+                depth: 35,
+                dataLabels: {
+                    enabled: true,
+                    format: '{point.name}'
+                }
+            }
+        },
+        series: [{
+            type: 'pie',
+            name: '',
+            data: [
+                ['Echec', 14.2],
+                ['Succès', 85.8],
+            ]
+        }]
+    });
+});
+
+
+$(function () {
+    $('#histo').highcharts({
+        chart: {
+            type: 'column'
+        },
+        title: {
+            text: 'Indémnisation en fonction du salaire (euros)'
+        },
+        xAxis: {
+            type: 'category',
+            labels: {
+                rotation: -45,
+                style: {
+                    fontSize: '13px',
+                    fontFamily: 'Verdana, sans-serif'
+                }
+            }
+        },
+        yAxis: {
+            min: 0,
+            title: {
+                text: 'Indémnisation'
+            }
+        },
+        legend: {
+            enabled: false
+        },
+        tooltip: {
+            pointFormat: 'Indémnisation: <b>{point.y:.1f} mille euros</b>'
+        },
+        series: [{
+            name: 'Population',
+            data: [
+                ['< 2 500', 10.7],
+                ['< 3 500', 20.1],
+                ['< 4 500', 34.2],
+                ['< 5 000', 40.0],
+            ],
+            dataLabels: {
+                enabled: true,
+                rotation: -90,
+                color: '#FFFFFF',
+                align: 'right',
+                format: '{point.y:.1f}', // one decimal
+                y: 10, // 10 pixels down from the top
+                style: {
+                    fontSize: '13px',
+                    fontFamily: 'Verdana, sans-serif'
+                }
+            }
+        }]
+    });
+});
+</script>
 
 <div class='container' style='font-family:expletus_sansregular;'>
   <h2 style='font-family:expletus_sansmedium; margin-bottom: 25px;'> Résultats de la recherche</h2>
-  <div class='row'>
-    <div class='col-lg-6 center-block'>
-      <img src='<%= image_path('find1.png') %>' alt="Smiley face"  style='width:100%'>
-      <div style='margin-top:25px; margin-bottom:25px;text-align:center '> <a href= '#' target='_blank' style=' text-decoration:underline'> Explorer la donnée</a></div>
-
-    </div>
-    <div class='col-lg-6'>
-      <img src='<%= image_path('find2.png') %>' alt="Smiley face" style='width:100%'>
-      <div style='margin-top:15px;margin-bottom:25px;text-align:center '> <a href= '#' target='_blank' style=' text-decoration:underline'> Explorer la donnée</a></div>
-    </div>
-  </div>
-  <div class='row'>
-    <div class='col-lg-3'></div>
-    <div class='col-lg-6' style='margin-top: 15px;'>
-      <img src='<%= image_path('find3.png') %>' alt="Smiley face"  style='width:100%'>
-      <div style='margin-top:15px; margin-bottom:25px;text-align:center '> <a href= '#' target='_blank' style=' text-decoration:underline'> Explorer la donnée</a></div>
-    </div>
-  </div>
-    <a href="#" target='_blank' style='color: blue; text-decoration:underline'>Imprimer le rapport</a><br>
-    <a href="#" target='_blank' style='color: blue; text-decoration:underline'>Enregistrer dans 'mes recherches'</a><br>
-    <a href= '<%= image_path('Ferrari.pdf') %>' target='_blank' style='color: blue; text-decoration:underline'> Décisions associées</a>
+  <div id="cam" style="min-width: 300px; height: 400px; margin-top: 45px;"></div>
+  <div id="histo" style="min-width: 300px; height: 400px; margin-top: 45px;"></div>
 </div>

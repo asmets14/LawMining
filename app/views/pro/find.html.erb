@@ -1,0 +1,168 @@
+<script src="https://code.highcharts.com/highcharts.js"></script>
+<script src="https://code.highcharts.com/modules/exporting.js"></script>
+
+<script>
+$(function () {
+    $('#bathor').highcharts({
+        chart: {
+            type: 'bar'
+        },
+        title: {
+            text: 'Taux de condamnation'
+        },
+        xAxis: {
+            categories: ['Rupture de contrat anticipé']
+        },
+        yAxis: {
+            min: 0,
+            title: {
+                text: 'Total sur 2400 dossiers'
+            }
+        },
+        legend: {
+            reversed: true
+        },
+        plotOptions: {
+            series: {
+                stacking: 'normal'
+            }
+        },
+        series: [{
+            name: 'Condamné',
+            data: [70]
+        }, {
+            name: 'Non condamné',
+            data: [30]
+        }]
+    });
+});
+
+
+$(function () {
+    $('#combi').highcharts({
+        title: {
+            text: 'Combination chart'
+        },
+        xAxis: {
+            categories: ['Apples', 'Oranges', 'Pears', 'Bananas', 'Plums']
+        },
+        labels: {
+            items: [{
+                html: 'Total fruit consumption',
+                style: {
+                    left: '50px',
+                    top: '18px',
+                    color: (Highcharts.theme && Highcharts.theme.textColor) || 'black'
+                }
+            }]
+        },
+        series: [{
+            type: 'column',
+            name: 'Jane',
+            data: [3, 2, 1, 3, 4]
+        }, {
+            type: 'column',
+            name: 'John',
+            data: [2, 3, 5, 7, 6]
+        }, {
+            type: 'column',
+            name: 'Joe',
+            data: [4, 3, 3, 9, 0]
+        }, {
+            type: 'spline',
+            name: 'Average',
+            data: [3, 2.67, 3, 6.33, 3.33],
+            marker: {
+                lineWidth: 2,
+                lineColor: Highcharts.getOptions().colors[3],
+                fillColor: 'white'
+            }
+        }, {
+            type: 'pie',
+            name: 'Total consumption',
+            data: [{
+                name: 'Jane',
+                y: 13,
+                color: Highcharts.getOptions().colors[0] // Jane's color
+            }, {
+                name: 'John',
+                y: 23,
+                color: Highcharts.getOptions().colors[1] // John's color
+            }, {
+                name: 'Joe',
+                y: 19,
+                color: Highcharts.getOptions().colors[2] // Joe's color
+            }],
+            center: [100, 80],
+            size: 100,
+            showInLegend: false,
+            dataLabels: {
+                enabled: false
+            }
+        }]
+    });
+});
+
+$(function () {
+    $('#cam').highcharts({
+        chart: {
+            type: 'pie',
+            options3d: {
+                enabled: true,
+                alpha: 45,
+                beta: 0
+            }
+        },
+        title: {
+            text: 'Articles invoqué lors du procès'
+        },
+        tooltip: {
+            pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+        },
+        plotOptions: {
+            pie: {
+                allowPointSelect: true,
+                cursor: 'pointer',
+                depth: 35,
+                dataLabels: {
+                    enabled: true,
+                    format: '{point.name}'
+                }
+            }
+        },
+        series: [{
+            type: 'pie',
+            name: 'Article du droit',
+            data: [
+                ['Article L442-6', 45.0],
+                ['Article L121-3', 26.8],
+                {
+                    name: 'Article L121-3',
+                    y: 12.8,
+                    sliced: true,
+                    selected: true
+                },
+                ['Article L441-6', 8.5],
+                ['Article L310-3', 6.2],
+                ['Others', 0.7]
+            ]
+        }]
+    });
+});
+</script>
+
+<div class='container' style='margin-top:25px;'>
+  <h1 style='margin-bottom: 25px; font-family: expletus_sansmedium'> Analyse statistique </h1>
+  <div id="bathor" style="min-width: 300px; height: 400px;margin-top: 35px; "></div>
+<hr>
+  <div id="cam" style="min-width: 300px; height: 400px; margin-top: 45px;"></div>
+<hr>
+  <div id="combi" style="min-width: 300px; height: 400px;margin-top:45px "></div>
+<div style='margin-top: 30px;'>
+    <a href="#" target='_blank' style='color: blue; text-decoration:underline; padding-right: 20px;'>Imprimer le rapport</a>
+    <a href="#" target='_blank' style='color: blue; text-decoration:underline; padding-right: 20px;'>Enregistrer dans 'mes recherches'</a>
+    <a href= '<%= image_path('Ferrari.pdf') %>' target='_blank' style='color: blue; text-decoration:underline'> Décisions associées</a>
+</div>
+</div>
+
+

@@ -3,6 +3,8 @@ Rails.application.routes.draw do
   get 'login', to: 'outils#login'
   get 'search', to: 'outils#search'
   get 'find', to: 'outils#find'
+  get 'prosearch', to: 'pro#search'
+  get 'profind', to: 'pro#find'
   resources :outils
 
   # The priority is based upon order of creation: first created -> highest priority.
