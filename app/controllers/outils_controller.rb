@@ -43,6 +43,10 @@ class OutilsController < ApplicationController
 
   def find
   end
+
+  def choix
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_outil

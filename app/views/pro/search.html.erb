@@ -18,48 +18,51 @@ $(document).ready(function(){
     });
 });
 </script>
+
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="<%= root_path %>" style='font-family:expletus_sansmedium'>LawMine</a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+              <ul class="nav navbar-nav" style='font-family: expletus_sansregular'>
+                <li style=''>
+                  <%= link_to "Recherche", prosearch_path %>
+                </li>
+                <li style=''>
+                  <%= link_to "Mes recherches", search_path %>
+                </li>
+              </ul>
+              <ul class="nav navbar-nav navbar-right" style='font-family: expletus_sansregular'>
+                <li style=''>
+                  <%= link_to "Julie Delrieu", login_path %>
+                </li>
+              </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
 <div class='container'  style='font-family:expletus_sansmedium;'>
   <h1 class='title-filter'>Filtres de recherche</h1>
-  <div class='row center-block f1'>
-    <div class='col-lg-3'></div>
-    <div class='col-lg-6 '>
-      <h3>Je suis </h3>
-        <label class="checkbox-inline avocat"><input type="checkbox" value="">Avocat</label>
-        <label class="checkbox-inline"><input type="checkbox" value="">Assureur</label>
-        <label class="checkbox-inline"><input type="checkbox" value="">Expert comptable</label>
-    </div>
-  </div>
 
-  <div class='row center-block f1'>
-    <div class='col-lg-3'></div>
-    <div class='col-lg-6 '>
-      <h3>Lieu</h3>
-        <label class="checkbox-inline"><input type="checkbox" value="">Paris</label>
-        <label class="checkbox-inline"><input type="checkbox" value="">Nanterre</label>
-        <label class="checkbox-inline"><input type="checkbox" value="">Versailles</label>
-    </div>
-  </div>
 
   <div class='row center-block f1'>
     <div class='col-lg-3'></div>
     <div class='col-lg-6 '>
       <h3>Je voudrais</h3>
         <label class="checkbox-inline"><input type="checkbox" value="">Une estimation de prix</label>
-        <label class="checkbox-inline"><input type="checkbox" value="">Un volume d'affaire</label>
+        <label class="checkbox-inline"><input type="checkbox" value="">Un volume d'affaires</label>
         <label class="checkbox-inline"><input type="checkbox" value="">Un taux de condamnation</label>
         <label class="checkbox-inline"><input type="checkbox" value="">Un rapport complet et détaillé</label>
-    </div>
-  </div>
-  <div class='row center-block f1'>
-    <div class='col-lg-3'></div>
-    <div class='col-lg-6'>
-      <h3>Type de tribunal</h3>
-      <div class="form-group">
-         <label class="checkbox-inline commerce"><input type="checkbox" value=""> Tribunal de Commerce</label>
-         <label class="checkbox-inline prudhomme"><input type="checkbox" value="">Conseil Prud'hommes</label>
-         <label class="checkbox-inline"><input type="checkbox" value="">Tribunal d'Instance</label>
-         <label class="checkbox-inline"><input type="checkbox" value=""> Tribunal de Grande Instance</label>
-      </div>
     </div>
   </div>
   
@@ -79,7 +82,7 @@ $(document).ready(function(){
         <div class='affaire'>
          <select>
             <option value="volvo">Droit commercial</option>
-            <option value="saab">Droit des societé</option>
+            <option value="saab">Droit des societés</option>
             <option value="mercedes">Droit social/travail</option>
             <option value="audi">Droit des entreprises en difficulté</option>
             <option value="audi">Droit de la concurrence</option>
@@ -88,6 +91,18 @@ $(document).ready(function(){
             <option value="audi">Droit financier</option>
           </select>
         </div>
+      </div>
+    </div>
+  </div>
+  <div class='row center-block f1'>
+    <div class='col-lg-3'></div>
+    <div class='col-lg-6'>
+      <h3>Type de tribunal</h3>
+      <div class="form-group">
+         <label class="checkbox-inline commerce"><input type="checkbox" value=""> Tribunal de Commerce</label>
+         <label class="checkbox-inline prudhomme"><input type="checkbox" value="">Conseil Prud'hommes</label>
+         <label class="checkbox-inline"><input type="checkbox" value="">Tribunal d'Instance</label>
+         <label class="checkbox-inline"><input type="checkbox" value=""> Tribunal de Grande Instance</label>
       </div>
     </div>
   </div>
@@ -114,7 +129,7 @@ $(document).ready(function(){
         <label class="checkbox-inline"><input type="checkbox" value="">Contestation d'une sanction</label>
     </div>
   </div>
-  
+
   <div class='row center-block f1'>
     <div class='col-lg-3'> </div>
     <div class='col-lg-6'>
@@ -128,7 +143,17 @@ $(document).ready(function(){
     </div>
   </div>
 
-  
+  <div class='row center-block f1'>
+      <div class='col-lg-3'></div>
+      <div class='col-lg-6 '>
+        <h3>Couverture géographique</h3>
+          <label class="checkbox-inline"><input type="checkbox" value="">Paris</label>
+          <label class="checkbox-inline"><input type="checkbox" value="">Nanterre</label>
+          <label class="checkbox-inline"><input type="checkbox" value="">Versailles</label>
+      </div>
+    </div>
+
+
   <div class='row center-block forlawyer'>
     <div class='col-lg-3'></div>
     <div class='col-lg-6'>
